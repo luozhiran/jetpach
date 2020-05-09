@@ -1,48 +1,34 @@
 package com.yk.jetpack
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.TextView
-import androidx.lifecycle.*
-import com.yk.jetpack.modul.SecondModel
-import kotlin.math.max
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.alibaba.android.arouter.launcher.ARouter
+import com.yk.jetpack.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
 
-    var TAG="MainActivity"
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    lateinit var tv: TextView
-    lateinit var btn: Button
-    lateinit var model: SecondModel
 
-    val nameObserver = Observer<String> {
-        tv.text = it
-    }
-//
-//    val liveDataMap: LiveData<Int> = Transformations.map<String, Int>(model.mCurrent!!) { input ->
-//        input.length
-//    }
-//
-//    var liveDataSwitch: LiveData<String> =
-//        Transformations.switchMap<String, String>(model.mCurrent!!) { input: String? ->
-//            MutableLiveData<String>().also { it.value = input!!.toLowerCase()}
-//        }
-
+    lateinit var mRootView: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        tv = findViewById(R.id.text)
-        btn = findViewById(R.id.btn)
+        mRootView = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        mRootView.liveDataAndViewModel.setOnClickListener(::onClick)
+        mRootView.userLiveData.setOnClickListener(::onClick)
+        mRootView.userViewModel.setOnClickListener(::onClick)
+    }
 
-        model = ViewModelProviders.of(this).get(SecondModel::class.java)
-        model.mCurrent!!.observe(this, nameObserver)
-        model.mCurrent?.value
-
-        btn.setOnClickListener {
-            model.mCurrent?.value = (1000..5000).random().toString()
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.userLiveData -> ARouter.getInstance()
+                .build("/testlib/UseLiveDataActivity")
+                .navigation()
+            R.id.liveDataAndViewModel -> ARouter.getInstance()
+                .build("/testlib/UseLiveDataAndViewModelActivity").navigation()
+            R.id.userViewModel->ARouter.getInstance().build("/testlib/UseViewModelActivity").navigation()
         }
     }
 
