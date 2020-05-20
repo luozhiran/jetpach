@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.yk.log_lib.L
+import com.itg.lib_log.L
 import com.yk.net_base.NetApi
 import com.yk.net_base.NetInit
 import com.yk.net_base.mvvm.NetLoading

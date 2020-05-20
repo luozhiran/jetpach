@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.yk.log_lib.L
+import com.itg.lib_log.L
 import com.yk.testlib.R
 import com.yk.testlib.databinding.ActivityUserLiveDataBinding
 import com.yk.testlib.datas.ItgData

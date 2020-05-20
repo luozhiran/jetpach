@@ -8,7 +8,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.yk.log_lib.L
+import com.itg.lib_log.L
 import com.yk.testlib.OrientationUtils
 import com.yk.testlib.R
 import com.yk.testlib.databinding.ActivityUserViewModelBinding
