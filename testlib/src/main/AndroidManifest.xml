@@ -3,7 +3,8 @@
     package="com.yk.testlib">
 
     <application>
-        <activity android:name=".activitys.livedata_videmodel.UseLiveDataAndViewModelActivity"></activity>
+        <activity android:name=".activitys.TestKtNetBaseActivity"></activity>
+        <activity android:name=".activitys.livedata_videmodel.UseLiveDataAndViewModelActivity" />
         <activity android:name=".activitys.UseViewModelActivity" />
         <activity android:name=".activitys.livedata_videmodel.UseLiveDataActivity" />
     </application>

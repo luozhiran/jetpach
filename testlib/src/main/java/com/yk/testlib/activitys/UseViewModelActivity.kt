@@ -8,8 +8,8 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.yk.ktbase.L
-import com.yk.ktbase.Orientation
+import com.yk.log_lib.L
+import com.yk.testlib.OrientationUtils
 import com.yk.testlib.R
 import com.yk.testlib.databinding.ActivityUserViewModelBinding
 import com.yk.testlib.datas.ItgData
@@ -34,7 +34,6 @@ class UseViewModelActivity : AppCompatActivity() {
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_user_view_model)
         mScreenOrientation = requestedOrientation
         mRootView = DataBindingUtil.setContentView(this, R.layout.activity_user_view_model)
         //获取到ViewModel,android系统框架管理VieWModel的生命周期
@@ -47,7 +46,7 @@ class UseViewModelActivity : AppCompatActivity() {
         }
         mRootView.time.text = itgModel.itgData?.time
         mRootView.btn.setOnClickListener {
-            Orientation.switchOrientation(this, ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
+            OrientationUtils.switchOrientation(this, ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
         }
 
     }

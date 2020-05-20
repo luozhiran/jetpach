@@ -42,6 +42,20 @@
                     android:layout_height="wrap_content"
                     android:text="使用LiveDataAndViewModel"
                     android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/testjetpack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="testjetpack"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/mvvm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="测试mvvm"
+                    android:textAllCaps="false" />
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

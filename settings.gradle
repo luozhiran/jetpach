@@ -1,4 +1,6 @@
 rootProject.name='Jetpack'
 include ':app'
-include ':ktbase'
 include ':testlib'
+include ':testjetpack'
+include ':net-base'
+include ':log-lib'
